@@ -1,0 +1,16 @@
+# -- Informacje o projekcie -----------------------------------------------------
+
+projekt = 'hotele_zakopane'
+autorzy = 'Magdalena, Izabela, Zuzanna'
+
+# -- Opis aplikacji -----------------------------------------------------
+Aplikacja hotele_zakopane pobiera informacje o hotelach w Zakopanem, które następnie wstawiane są do pliku json zaśilając bazę danych.
+
+# -- Użyte technologie -----------------------------------------------------
+Python - biblioteki:
+*logging - Ten moduł definiuje funkcje i klasy, które implementują elastyczny system rejestrowania zdarzeń dla aplikacji i bibliotek
+*os - Ten moduł zapewnia przenośny sposób korzystania z funkcji zależnych od systemu operacyjnego
+*panda - jest biblioteką na licencji BSD o otwartym kodzie źródłowym, zapewniającą wysokowydajne, łatwe w użyciu struktury danych i narzędzia analizy danych
+Python - środowisko:
+*scrapy - https://scrapy.org/
+
