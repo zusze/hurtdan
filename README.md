@@ -1,5 +1,5 @@
 # O hotele_zakopane
-Sprawdź dostępność hoteli w Zakopanem przy użyciu jednego guzika!
+Sprawdź opinie o hotelach w Zakopanem przy użyciu procesu ETL!
 ## Podstawowe informacje
 ### O procesie ETL
 "Skrót ETL (z języka angielskiego extraction, transformation, loading) oznacza ekstrakcję, transformację i ładowanie danych.
