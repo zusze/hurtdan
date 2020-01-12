@@ -1,5 +1,14 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8" />
+</head>
+<body>
 <?php
-          $connect = mysqli_connect("localhost", "user", "password", "db"); //polaczenie do bazy
+
+	echo "Hello World";
+
+          $connect = new mysqli("localhost", "root", "", "projekt_hd"); //polaczenie do bazy
           if (mysqli_connect_errno()) {
             echo "Blad polaczenia do bazy MySQL: " . mysqli_connect_error();
             exit();
@@ -9,8 +18,13 @@
           $array = json_decode($data, true); //konwertowanie jsona do tabeli php
           foreach($array as $row) //wyciaganie daych z tabeli i insertowanie do tabeli
           {
-           $sql= "INSERT INTO opinie(hotel,publish_date,rev_count,rating,tags) VALUES ('".$row["hotel"]."', '".$row["publish_date"]."', '".$row["rev_count"]."', '".$row["rating"]."',, '".$row["tags"]."'); ";  // insert danych
-           mysqli_query($connect, $sql)) //Run Mutliple Insert Query
+           $sql= "INSERT INTO opinie(hotel,publish_date,rev_count,rating,tags) VALUES ('".$row["hotel"]."', '".$row["publish_date"]."', '".$row["rev_count"]."', '".$row["rating"]."',, '".$row["tags"]."');";  // insert danych
            }
-    echo "Proces ETL skonczony"
-    ?>
+		   if(mysqli_query($connect, $sql)); //Run Mutliple Insert Query
+		   {
+			echo "Proces ETL skonczony";
+		   }
+	
+?>
+</body>
+</html>
