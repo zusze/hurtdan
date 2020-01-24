@@ -23,7 +23,7 @@
         </style>
 </head>
 <body style="background-color: lightblue;">
-<form action="projekt.php">
+<form action="projekt.php" method="POST">
         <input type="text" name="tXt" />
         <input type="submit" class="btn btn-default"  name="extract" value="extract"/>
         <input type="submit" class="btn btn-default"  name="transform" value="transform"/>
@@ -52,13 +52,13 @@ if($_GET){
     if(extract($_GET['extract'])){
         extract();
     }
-    elseif(transform($_GET['transform'])){
+    elseif(isset($_GET['transform'])){
         transform();
     }
-    elseif(load($_GET['load'])){
+    elseif(isset($_GET['load'])){
         load();
     }
-    elseif(ETL($_GET['ETL'])){
+    elseif(isset($_GET['ETL'])){
         ETL();
     }    
 }
@@ -70,9 +70,20 @@ function transform (){
     echo "The transform function is called.";
 }
 function load (){
-    echo "The extrloadact function is called.";
+    echo "The load function is called.";
+    $filename = "zakopane.json";
+    $data = file_get_contents($filename); //ladowanie pliku json do php
+    $array = json_decode($data, true); //konwertowanie jsona do tabeli php
+    foreach($array as $row) //wyciaganie daych z tabeli i insertowanie do tabeli
+    {
+     $sql= mysqli_query("INSERT INTO opinie(hotel,publish_date,rev_count,rating,tags) VALUES ('".$row["hotel"]."', '".$row["publish_date"]."', '".$row["rev_count"]."', '".$row["rating"]."',, '".$row["tags"]."');");  // insert danych 
+    }
 }
 function ETL (){
     echo "The ETL function is called.";
 }*/
 ?>
+               
+</form>
+    </body>
+    </html>
